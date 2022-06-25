@@ -1,0 +1,84 @@
+{
+  "name": "Artery32",
+  "title": "Artery AT32",
+  "description": "The AT32 family of 32-bit Flash MCUs based on the ARM Cortex-M processor is designed to offer new degrees of freedom to MCU users. It offers a 32-bit product range that combines very high performance, real-time capabilities, digital signal processing, and low-power, low-voltage operation, while maintaining full integration and ease of development.",
+  "homepage": "https://www.arterytek.com/cn/index.jsp",
+  "license": "Apache-2.0",
+  "keywords": [
+    "artery",
+    "ARM",
+    "Cortex-M",
+    "AT32FXX",
+    "AT32"
+  ],
+  "engines": {
+    "platformio": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/platformio/platform-ststm32.git"
+  },
+  "version": "1.0.1",
+  "frameworks": {
+    "cmsis": {
+      "package": "framework-cmsis",
+      "script": "builder/frameworks/cmsis.py",
+      "description": "The ARM Cortex Microcontroller Software Interface Standard (CMSIS) is a vendor-independent hardware abstraction layer for the Cortex-M processor series and specifies debugger interfaces. The CMSIS enables consistent and simple software interfaces to the processor for interface peripherals, real-time operating systems, and middleware. It simplifies software re-use, reducing the learning curve for new microcontroller developers and cutting the time-to-market for devices",
+      "homepage": "https://developer.arm.com/tools-and-software/embedded/cmsis",
+      "title": "CMSIS"
+    },
+    "cmsis-at32f43":{
+      "package":"framework-cmsis-at32f43",
+      "script":"builder/frameworks/cmsis.py"
+    },
+    "arduino": {
+      "package": "framework-arduino",
+      "script": "builder/frameworks/arduino.py",
+      "description": "Arduino Wiring-based Framework allows writing cross-platform software to control devices attached to a wide range of Arduino boards to create all kinds of creative coding, interactive objects, spaces or physical experiences",
+      "homepage": "http://arduino.cc/en/Reference/HomePage",
+      "title": "Arduino"
+    }
+  },
+  "packages": {
+    "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "owner": "platformio",
+      "version": ">=1.60301.0,<1.80000.0",
+      "optionalVersions": [
+        "~1.60301.0",
+        "~1.80201.0",
+        "~1.90201.0"
+      ]
+    },
+    "framework-cmsis": {
+      "type": "framework",
+      "optional": true,
+      "owner": "platformio",
+      "version": "~2.50501.0",
+      "optionalVersions": [
+        "~2.50700.0"
+      ]
+    },
+    "framework-cmsis-at32f43": {
+      "type": "framework",
+      "optional": true,
+      "owner": "local",
+      "version": "1.0.0"
+    },
+    "tool-jlink": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "^1.63208.0"
+    },
+    "tool-cmake": {
+      "optional": true,
+      "owner": "platformio",
+      "version": "~3.21.0"
+    },
+    "tool-ldscripts-artery32": {
+      "optional": true,
+      "version": "0.2.0"
+    }
+  }
+}
